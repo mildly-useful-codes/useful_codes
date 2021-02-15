@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mountpoint=$(echo -e "/media/usb1\n/media/usb2\n/media/usb3"|dmenu -l 20)
+echo "chosen $mountpoint"
+sudo umount $mountpoint
+echo "Done unmounting $mountpoint"
+

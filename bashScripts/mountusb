@@ -1,0 +1,9 @@
+#!/bin/sh
+
+temp=$(lsblk -nlp |awk '{print $1,$4}' |dmenu -l 20 | awk -F ' ' '{print $1}')
+echo "chosen $temp"
+mountpoint=$(echo -e "/media/usb1/\n/media/usb2/\n/media/usb3/"|dmenu -l 20)
+echo "chosen $mountpoint"
+sudo mount $temp $mountpoint && cd $mountpoint
+echo "Done mounting $temp to $mountpoint"
+

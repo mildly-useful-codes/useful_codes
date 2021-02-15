@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+choice=$(cat "/home/eragon/Documents/scripts/listofscripts.txt" |dmenu -l 10)
+echo $choice 
+if [ -d $choice ]
+then
+        echo "Directory"
+        nnn $choice
+else
+        echo "File"
+        nvim $choice
+fi

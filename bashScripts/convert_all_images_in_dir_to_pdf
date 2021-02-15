@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+# convert *.{png|jpg|jpeg} merged.pdf && rm -rf !(merged.pdf)
+
+convert $(find . -iregex '.*\.\(jpg\|gif\|png\|jpeg\)$') merged.pdf
+echo "Done merging, cleaning up"
+rm -rf $(find . -iregex '.*\.\(jpg\|gif\|png\|jpeg\)$')
+
+
+

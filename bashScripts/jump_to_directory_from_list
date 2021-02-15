@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+choice=$(cat "/home/eragon/Documents/scripts/listofgo.txt" |dmenu -l 10)
+echo $choice 
+if [ -d $choice ]
+then
+        echo "Directory"
+        nnn $choice
+elif [[ $choice == *.pdf ]]
+then 
+        echo "Pdf"
+        zathura $choice
+else 
+        echo "File"
+        nvim $choice
+fi

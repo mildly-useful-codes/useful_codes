@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+cp -r "$1" ~/remotedir/

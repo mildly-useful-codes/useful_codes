@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+watch "column -t -s $',' metrics.csv |tail -n 2"
+
